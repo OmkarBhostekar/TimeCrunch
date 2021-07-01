@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.omkarcodes.timecrunch.ui.fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskDetailFragment"
+        android:name="com.omkarcodes.timecrunch.ui.fragments.TaskDetailFragment"
+        android:label="TaskDetailFragment" />
+</navigation>
