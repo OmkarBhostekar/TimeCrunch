@@ -5,11 +5,11 @@
         android:title="Tasks"
         app:showAsAction="always"
         android:icon="@drawable/list"/>
-    <item android:id="@+id/newTask"
+    <item android:id="@+id/newTaskFragment"
         android:title="New"
         app:showAsAction="always"
         android:icon="@drawable/add"/>
-    <item android:id="@+id/settingFragment"
+    <item android:id="@+id/settingsFragment"
         android:title="Settings"
         app:showAsAction="always"
         android:icon="@drawable/settings"/>

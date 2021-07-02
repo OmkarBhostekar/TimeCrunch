@@ -80,8 +80,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),TaskAdapter.OnClickListene
             CalendarChangesObserver {
             // you can override more methods, in this example we need only this one
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
-//                tvDate.text = "${DateUtils.getMonthName(date)}, ${DateUtils.getDayNumber(date)} "
-//                tvDay.text = DateUtils.getDayName(date)
+                // filter tasks
                 super.whenSelectionChanged(isSelected, position, date)
             }
         }
@@ -94,12 +93,14 @@ class HomeFragment : Fragment(R.layout.fragment_home),TaskAdapter.OnClickListene
         }
 
         // here we init our calendar, also you can set more properties if you haven't specified in XML layout
-        val singleRowCalendar = binding.singleRowCalender.apply {
+       binding.singleRowCalender.apply {
             calendarViewManager = myCalendarViewManager
             calendarChangesObserver = myCalendarChangesObserver
             calendarSelectionManager = mySelectionManager
+            pastDaysCount = 0
             setDates(getFutureDatesOfCurrentMonth())
             init()
+            select(0)
         }
 
 //        btnRight.setOnClickListener {
@@ -141,7 +142,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),TaskAdapter.OnClickListene
     private fun getDates(list: MutableList<Date>): List<Date> {
         // load dates of whole month
         calendar.set(Calendar.MONTH, currentMonth)
-        calendar.set(Calendar.DAY_OF_MONTH, 1)
+//        calendar.set(Calendar.DAY_OF_MONTH, 1)
         list.add(calendar.time)
         while (currentMonth == calendar[Calendar.MONTH]) {
             calendar.add(Calendar.DATE, +1)

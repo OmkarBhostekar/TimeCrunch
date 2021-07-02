@@ -1,6 +1,7 @@
 package com.omkarcodes.timecrunch
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -20,7 +21,16 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.navHostFragment)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-
+            when(destination.id){
+                R.id.newTaskFragment,
+                R.id.taskDetailFragment -> {
+                    binding.bottomNav.visibility = View.GONE
+                }
+                R.id.settingsFragment,
+                R.id.homeFragment -> {
+                    binding.bottomNav.visibility = View.VISIBLE
+                }
+            }
         }
 
         binding.bottomNav.setupWithNavController(navController)

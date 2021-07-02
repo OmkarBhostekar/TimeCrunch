@@ -16,4 +16,16 @@
         android:id="@+id/taskDetailFragment"
         android:name="com.omkarcodes.timecrunch.ui.fragments.TaskDetailFragment"
         android:label="TaskDetailFragment" />
+    <fragment
+        android:id="@+id/newTaskFragment"
+        android:name="com.omkarcodes.timecrunch.ui.fragments.NewTaskFragment"
+        android:label="NewTaskFragment" >
+        <action
+            android:id="@+id/action_newTaskFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.omkarcodes.timecrunch.ui.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>
